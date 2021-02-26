@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ShopRUs_API.Helpers
 {
-    //Outer face Api Response --
+    //Outer face Api Response ----
     public class APIGenericResponseDTO<T>
     {
         public bool Success { get; set; }
