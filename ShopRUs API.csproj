@@ -9,7 +9,6 @@
   <ItemGroup>
     <Folder Include="WriteDTO\" />
     <Folder Include="ReadDTO\" />
-    <Folder Include="ShopRu.DataAccess\Entities\" />
     <Folder Include="ShopRu.DataAccess\Migrations\" />
     <Folder Include="XUnitTest\Controller\" />
     <Folder Include="XUnitTest\Services\" />
