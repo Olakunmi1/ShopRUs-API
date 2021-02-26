@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>ShopRUs_API</RootNamespace>
+    <UserSecretsId>87796677-9de5-4bc5-8cc5-afe1cd751396</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="WriteDTO\" />
+    <Folder Include="ReadDTO\" />
+    <Folder Include="ShopRu.DataAccess\Entities\" />
+    <Folder Include="ShopRu.DataAccess\Migrations\" />
+    <Folder Include="XUnitTest\Controller\" />
+    <Folder Include="XUnitTest\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="NLog.Config" Version="4.7.7" />
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="6.0.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.0.1" />
+  </ItemGroup>
+
+
+</Project>
