@@ -55,7 +55,7 @@ namespace ShopRUs_API
             {
                 options.SwaggerDoc("v2", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
-
+                       
                     Title = "ShopRUs API Service",
                     Version = "v2",
                     Description = "A Retail Api that provides Discounts to their customers base on different types, " +
