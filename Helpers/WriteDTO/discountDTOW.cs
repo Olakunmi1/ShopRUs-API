@@ -1,26 +1,21 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ShopRUs_API.ShopRu.DataAccess.Entities
+namespace ShopRUs_API.Helpers.WriteDTO
 {
-    public class Discount
+    public class discountDTOW 
     {
-        [Key]
-        public int Id { get; set; }
         [Required]
         public string DiscountType { get; set; } //Affiliate, employee, etc
-
-        [ForeignKey("typeOfCustomerId")]
-        public Percentage percentage { get; set; }
-        public int PercentageId { get; set; } //30%, 10%
+        [Required]
+        public int Percentage { get; set; } //30%, 10%, 5% -- predefined 
 
         [DataType("decimal(10 ,3)")]
         public decimal Price { get; set; }
         public string Currency { get; set; } //USD(Dollar) "$"
-
     }
 }

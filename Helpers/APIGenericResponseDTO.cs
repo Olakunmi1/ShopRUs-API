@@ -11,6 +11,6 @@ namespace ShopRUs_API.Helpers
         public bool Success { get; set; }
         public string Message { get; set; }
         public T Result { get; set; } 
-        public T Results { get; set; }
+        public List<T> Results { get; set; }
     }
 }
