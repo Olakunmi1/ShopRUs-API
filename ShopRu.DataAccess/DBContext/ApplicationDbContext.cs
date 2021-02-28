@@ -26,7 +26,7 @@ namespace ShopRUs_API.ShopRu.DataAccess.DBContext
         //OnModel creating below, seeds database when migration is added
         // Add-migration seedDb
 
-        
+        /*
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
            modelBuilder.Entity<TypeOfCustomer>().HasData(
@@ -202,7 +202,7 @@ namespace ShopRUs_API.ShopRu.DataAccess.DBContext
             //    }
            );
         }
-        //*/
+        */
     }
     
 }
