@@ -126,13 +126,13 @@ namespace ShopRUs_API.Controllers
                 //get percentage 
                 var percentt = _discount.GetPercentage(model.Percentage);
 
-                var percentg = (model.Percentage) / 100;
-                var percent = model.Percentage.ToString() + "%";
+                var percentg = (percentt.percentage) / 100;
+                //var percent = model.Percentage.ToString() + "%";
                 var newDiscountType = new Discount
                 {
                     DiscountType = model.DiscountType,
                     Currency = model.Currency,
-                    PercentageId = percentt.Id, 
+                    PercentageId = model.Percentage, 
                     Price = percentg
                 };
 
