@@ -23,8 +23,8 @@ namespace ShopRUs_API.ShopRu.DataAccess.DBContext
         public DbSet<TypeOfCustomer> typeOfCustomers { get; set; }
 
         //-- Uncomment the line below when you want to seed database 
-        //OnModel creating below, seeds database when migration is added
-        // Add-migration seedDb
+        //Seeds database when migration is added, Use command below
+        // Add-migration SeedDb
 
         /*
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -202,7 +202,7 @@ namespace ShopRUs_API.ShopRu.DataAccess.DBContext
             //    }
            );
         }
-        */
+       // */
     }
     
 }

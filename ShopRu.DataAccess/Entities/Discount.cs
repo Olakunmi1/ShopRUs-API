@@ -14,8 +14,9 @@ namespace ShopRUs_API.ShopRu.DataAccess.Entities
         [Required]
         public string DiscountType { get; set; } //Affiliate, employee, etc
 
-        [ForeignKey("typeOfCustomerId")]
+        [ForeignKey("PercentageId")]
         public Percentage percentage { get; set; }
+
         public int PercentageId { get; set; } //30%, 10%
 
         [DataType("decimal(10 ,3)")]
