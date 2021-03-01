@@ -21,6 +21,13 @@ Step1: Install the packages below
   Swashbuckle.AspNetCore.SwaggerUI" Version="6.0.1" 
   
   Step2: Database targeted is SQLServer but feel free to opt in for any database.
-  Your connectin string lives in appsettings.json, although,
+  The connection string lives in appsettings.json, although,
   i abstracted mine into Secret.json file which isnt published.
+
+Note: The Sql Create Table Statements can be found in the
+Migration folder named 'Çreate Table".
+
+Lastly the 'SeedData' can be found in the ApplicationDbContext class,
+uncomment the line of code and run 'Add-migration SeedData' via your
+package manager Consoleto seed database.
   
