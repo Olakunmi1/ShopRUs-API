@@ -17,12 +17,12 @@ namespace ShopRUs_API.Controllers
     [Route("api/Invoice")]
     public class InvoiceController : ControllerBase
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<InvoiceController> _logger;
         private readonly Iinvoice _invoice;
         private readonly ICustomer _customer;
         private readonly IDiscount _discount;
 
-        public InvoiceController(ILogger logger, Iinvoice invoice, ICustomer customer, IDiscount discount)
+        public InvoiceController(ILogger<InvoiceController> logger, Iinvoice invoice, ICustomer customer, IDiscount discount)
         {
             _logger = logger;
             _invoice = invoice;

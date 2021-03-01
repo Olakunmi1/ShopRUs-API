@@ -17,10 +17,10 @@ namespace ShopRUs_API.Controllers
     [Route("api/Discount")]
     public class DiscountController : ControllerBase
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<DiscountController> _logger;
         private readonly IDiscount _discount;
 
-        public DiscountController(ILogger logger, IDiscount discount)
+        public DiscountController(ILogger<DiscountController> logger, IDiscount discount)
         {
             _logger = logger;
             _discount = discount;

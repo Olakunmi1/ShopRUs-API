@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using ShopRUs_API.Helpers;
 using ShopRUs_API.ShopRu.DataAccess.DBContext;
 using ShopRUs_API.ShopRu.DataAccess.helper;
 using ShopRUs_API.ShopRu.DataAccess.Interface;
@@ -34,6 +35,14 @@ namespace ShopRUs_API
         {
             services.AddControllers();
 
+            //register the interfaces
+            services.AddScoped<ICustomer, CustomerRepository>();
+            services.AddTransient<IDiscount, DiscountRepository>();
+            services.AddTransient<Iinvoice, InvoiceRepository>();
+
+            services.AddTransient<Microsoft.Extensions.Logging.ILogger>(provider =>
+               provider.GetRequiredService<Microsoft.Extensions.Logging.ILogger<AnyClass>>());
+
             //important for json serialization Support -- input and output json formatter
             services.AddControllers()
                      .AddNewtonsoftJson(options =>
@@ -45,10 +54,6 @@ namespace ShopRUs_API
             services.AddDbContext<ApplicationDbContext>(options =>
                options.UseSqlServer(
                    Configuration.GetConnectionString("DefaultConnection")));
-
-            //register the interfaces
-            services.AddScoped<ICustomer, CustomerRepository>();
-
 
             //Swagger configuration 
             services.AddSwaggerGen(options =>
@@ -78,6 +83,9 @@ namespace ShopRUs_API
                 options.OperationFilter<AuthenticationRequirementsOperationFilter>();
 
                 services.AddMvcCore().AddApiExplorer();  // Service Needed for swagger to work with .netcoremvc
+
+                services.AddMvc()
+                    .AddControllersAsServices();
 
             });
         }

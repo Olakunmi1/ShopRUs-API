@@ -97,7 +97,7 @@ namespace ShopRUs_API.Controllers
                     Address = model.Address,
                     created_at = DateTime.Now,
                     updated_at = DateTime.Now,
-                    typeOfCustomerId = 2   //temporary, needs to be dynamic
+                    typeOfCustomerId = model.typeOfCustomerId
                 };
 
                 _customer.AddCustomer(newCustomer);
@@ -166,13 +166,13 @@ namespace ShopRUs_API.Controllers
             }
         }
 
-        [HttpGet("getSingleCustomerByName/{name}")] //name = firstName 
-        public IActionResult GetSingleCustomerByName(string name)   
+        [HttpGet("getSingleCustomerByName/{firstname}")] //name = firstName 
+        public IActionResult GetSingleCustomerByName(string firstname)   
         {
             try 
             {
                 _logger.LogInformation("getSingleCustomerByName");
-                var singleCustomer = _customer.GetSingleCustomerByName(name);
+                var singleCustomer = _customer.GetSingleCustomerByName(firstname);
                 if(singleCustomer == null)
                 {
                      return NotFound(new APIGenericResponseDTO<string>
