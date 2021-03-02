@@ -32,7 +32,7 @@ namespace ShopRUs_API.ShopRu.ServiceLayer.Services
 
         public Percentage GetPercentage(int percentg)
         {
-            var percntt = _context.percentages.FirstOrDefault(x => x.percentage == percentg);
+            var percntt = _context.percentages.FirstOrDefault(x => x.Id == percentg);
 
             return percntt;
         }

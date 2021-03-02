@@ -26,7 +26,7 @@ namespace ShopRUs_API.ShopRu.DataAccess.DBContext
         //Seeds database when migration is added, Use command below
         // Add-migration SeedDb
 
-        /*
+       // /*
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
            modelBuilder.Entity<TypeOfCustomer>().HasData(

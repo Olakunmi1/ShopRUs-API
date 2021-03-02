@@ -123,9 +123,16 @@ namespace ShopRUs_API.Controllers
                         Message = strbld.ToString()
                     });
                 }
-                //get percentage 
+                //check if oercentage exist 
                 var percentt = _discount.GetPercentage(model.Percentage);
-
+                if (percentt == null)
+                {
+                    return NotFound(new APIGenericResponseDTO<string>
+                    {
+                        Success = false,
+                        Message = "Percentage type doesnt exist"
+                    });
+                }
                 var percentg = (percentt.percentage) / 100;
                 //var percent = model.Percentage.ToString() + "%";
                 var newDiscountType = new Discount

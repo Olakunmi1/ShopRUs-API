@@ -28,6 +28,10 @@
     <Compile Remove="Migrations\._20210301000535_SeedData.cs" />
     <Compile Remove="Migrations\._20210301000535_SeedData.Designer.cs" />
     <Compile Remove="Migrations\._ApplicationDbContextModelSnapshot.cs" />
+    <Compile Remove="Migrations\20210302125626_InitialModels.cs" />
+    <Compile Remove="Migrations\20210302125626_InitialModels.Designer.cs" />
+    <Compile Remove="Migrations\20210302130057_Seeder.cs" />
+    <Compile Remove="Migrations\20210302130057_Seeder.Designer.cs" />
     <Compile Remove="ShopRu.DataAccess\DBContext\._ApplicationDbContext.cs" />
     <Compile Remove="XUnitTest\Controller\._DiscountController.cs" />
   </ItemGroup>
