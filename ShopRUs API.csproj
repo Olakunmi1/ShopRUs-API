@@ -7,9 +7,48 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ShopRu.DataAccess\Migrations\" />
+    <Compile Remove="ShopRu.DataAccess\Migrations\**" />
+    <Compile Remove="XUnitTest\Services\**" />
+    <Content Remove="ShopRu.DataAccess\Migrations\**" />
+    <Content Remove="XUnitTest\Services\**" />
+    <EmbeddedResource Remove="ShopRu.DataAccess\Migrations\**" />
+    <EmbeddedResource Remove="XUnitTest\Services\**" />
+    <None Remove="ShopRu.DataAccess\Migrations\**" />
+    <None Remove="XUnitTest\Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="._Program.cs" />
+    <Compile Remove="._Startup.cs" />
+    <Compile Remove="Controllers\._CustomerController.cs" />
+    <Compile Remove="Controllers\._DiscountController.cs" />
+    <Compile Remove="Controllers\._InvoiceController.cs" />
+    <Compile Remove="Migrations\._20210301000217_CreateTables.cs" />
+    <Compile Remove="Migrations\._20210301000217_CreateTables.Designer.cs" />
+    <Compile Remove="Migrations\._20210301000535_SeedData.cs" />
+    <Compile Remove="Migrations\._20210301000535_SeedData.Designer.cs" />
+    <Compile Remove="Migrations\._ApplicationDbContextModelSnapshot.cs" />
+    <Compile Remove="ShopRu.DataAccess\DBContext\._ApplicationDbContext.cs" />
+    <Compile Remove="XUnitTest\Controller\._DiscountController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="._appsettings.Development.json" />
+    <Content Remove="._appsettings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove=".DS_Store" />
+    <None Remove="._.DS_Store" />
+    <None Remove="._README.md" />
+    <None Remove="ShopRu.DataAccess\.DS_Store" />
+    <None Remove="ShopRu.DataAccess\._.DS_Store" />
+    <None Remove="XUnitTest\.DS_Store" />
+    <None Remove="XUnitTest\._.DS_Store" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="XUnitTest\Controller\" />
-    <Folder Include="XUnitTest\Services\" />
   </ItemGroup>
 
   <ItemGroup>

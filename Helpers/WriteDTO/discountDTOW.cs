@@ -14,8 +14,6 @@ namespace ShopRUs_API.Helpers.WriteDTO
         [Required]
         public int Percentage { get; set; } //30%, 10%, 5% -- predefined 
 
-        //[DataType("decimal(10 ,3)")]
-        //public decimal Price { get; set; }
         public string Currency { get; set; } //USD(Dollar) "$"
     }
 }
