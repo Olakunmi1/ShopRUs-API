@@ -14,6 +14,6 @@ namespace ShopRUs_API.ShopRu.DataAccess.Interface
       void AddCustomer(Customer customer);
       Customer GetSingleCustomerById(int id);
       Customer GetSingleCustomerByName(string name);
-      Task<bool> Save();
+      Task<int> Save();
    }
 }

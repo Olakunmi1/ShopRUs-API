@@ -87,7 +87,17 @@ namespace ShopRUs_API.Controllers
                         Message = strbld.ToString()
                     });
                 }
+                //check if type of customer exist ...
 
+                /*
+                var typeOfCustomerr = _customer.getTypeOfCustomer(model.typeOfCustomerId);
+                if (typeOfCustomerr == null) {
+                    return NotFound(new APIGenericResponseDTO<string>{ 
+                        Success = false,
+                        Message = "Type of Customer doesnt exist"
+                    });
+                } ;
+                */
                 var newCustomer = new Customer
                 {
                     firstName = model.firstName,

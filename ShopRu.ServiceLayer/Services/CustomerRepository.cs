@@ -49,9 +49,11 @@ namespace ShopRUs_API.ShopRu.ServiceLayer.Services
             return singleCustomerByName;
         }
 
-        public async Task<bool> Save()
+        public async Task<int> Save()
         {
-            return  (await _context.SaveChangesAsync() >= 0);
+            var response = _context.SaveChangesAsync();
+            return await response;
+           // return  (await _context.SaveChangesAsync() >= 0);
 
         }
     }
