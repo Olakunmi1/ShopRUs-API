@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging.Abstractions;
 using Moq;
 using ShopRUs_API.Controllers;
 using ShopRUs_API.Helpers;
@@ -71,27 +72,27 @@ namespace ShopRUs_API.XUnitTest.Controller
 
             return customers;
         }
-        
 
-        //[Fact]
-        //public void GetListOfCustomers_Action_method_Should_Return_ListOfCustomers() 
-        //{
-        //    // Arrange ---intializing the classes needed, and Setup up Mock
-          
-        //    var mockCustomerservice = new Mock<ICustomer>();
-        //    var mockCustomer = new Mock<ILogger>(); //
-        //    mockCustomerservice.Setup(c => c.GetListOf_AllCustomers()).Returns(GetAllCustomers());
 
-        //    var controller = new CustomerController(mockCustomerservice.Object);
+        //get List of Customers
+        [Fact]
+        public void GetListOfCustomers_Action_method_Should_Return_ListOfCustomers()
+        {
+            // Arrange ---intializing the classes needed, and Setup up Mock
+            var mockCustomerservice = new Mock<ICustomer>();
+            ILogger<CustomerController> logger = new Logger<CustomerController>(new NullLoggerFactory()); //mock for Ilogger 
+            mockCustomerservice.Setup(c => c.GetListOf_AllCustomers()).Returns(GetAllCustomers());
 
-        //    //Act  --- Calling on the method to be tested 
+            var controller = new CustomerController(mockCustomerservice.Object, logger);
 
-        //    var result = controller.GetListOf_Customers();
+            //Act  --- Calling on the method to be tested 
 
-        //    //Assert  --- i.e we need to start testing d outcome
-        //    var viewresult = result.Should().BeOfType<OkObjectResult>();
-        //    var model = viewresult.Subject.Value.Should().BeAssignableTo<APIGenericResponseDTO<customersDTO>>();
-        //    model.Subject.Results.Count().Should().Be(3);
-        //}
+            var result = controller.GetListOf_Customers();
+
+            //Assert  --- i.e we need to start testing d outcome
+            var viewresult = result.Should().BeOfType<OkObjectResult>();
+            var model = viewresult.Subject.Value.Should().BeAssignableTo<APIGenericResponseDTO<customersDTO>>();
+            model.Subject.Results.Count().Should().Be(3);
+        }
     }
 }
