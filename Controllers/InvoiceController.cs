@@ -141,6 +141,8 @@ namespace ShopRUs_API.Controllers
                                 Message = "Bil Process Succesful"
                             });
                     }
+
+
                             int CustomerDiscount = 5;  // for every $100 bill, customer gets $5 discount
 
                             var valuee = (model.TotalBill) / 100;

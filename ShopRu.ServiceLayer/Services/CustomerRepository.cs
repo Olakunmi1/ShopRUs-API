@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using ShopRUs_API.Helpers.ReadDTO;
 using ShopRUs_API.ShopRu.DataAccess.DBContext;
 using ShopRUs_API.ShopRu.DataAccess.Entities;
 using ShopRUs_API.ShopRu.DataAccess.helper;
@@ -23,7 +24,7 @@ namespace ShopRUs_API.ShopRu.ServiceLayer.Services
             _context.Customers.Add(customer);
         }
 
-        public IEnumerable<Customer> GetListOfAllCustomers(getListOfCustomersResourceParameters parameters)
+        public List<customersDTO> GetListOfAllCustomers(getListOfCustomersResourceParameters parameters)
         {
             var collections = _context.Customers as IQueryable<Customer>;
             collections = collections.Include(t => t.typeOfCustomer)
@@ -31,7 +32,18 @@ namespace ShopRUs_API.ShopRu.ServiceLayer.Services
                                      .Take(parameters.pageSize);
             
             collections.ToList();
-            return collections;
+
+            var listOfCustomer_ReadDTO = collections
+                   .Select(x => new customersDTO
+                   {
+                       Name = x.firstName + " " + x.lastName,
+                       gender = x.gender,
+                       email = x.email,
+                       Address = x.Address,
+                       created_at = x.created_at,
+                       typeOfCustomer = x.typeOfCustomer.Type
+                   }).ToList();
+            return listOfCustomer_ReadDTO;
         }
 
         public Customer GetSingleCustomerById(int id)

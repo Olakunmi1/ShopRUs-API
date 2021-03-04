@@ -33,19 +33,12 @@ namespace ShopRUs_API.Controllers
             {
                 _logger.LogInformation("getListOfAllDiscounts");
                 var listOfDiscounts = _discount.GetListOfAllDiscounts();
-                var listOfDiscounts_ReadDTO = listOfDiscounts
-                    .Select(x => new discountDTO
-                    {
-                       DiscountType = x.DiscountType,
-                       Percentage = x.percentage.percentage.ToString() + "%",
-                       Price = x.Price
-                    }).ToList();
-
+      
                 return Ok(new APIGenericResponseDTO<discountDTO>
                 {
                     Success = true,
                     Message = "List Of Discounts",
-                    Results = listOfDiscounts_ReadDTO
+                    Results = listOfDiscounts
                 });
             }
 

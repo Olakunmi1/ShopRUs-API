@@ -34,23 +34,13 @@ namespace ShopRUs_API.Controllers
             {
                 _logger.LogInformation("getListOfAllCusomers");
                 var listOfCustomers = _customer.GetListOfAllCustomers(param);
-                var listOfCustomer_ReadDTO = listOfCustomers
-                    .Select(x => new customersDTO
-                    {
-                        Name = x.firstName + " " + x.lastName,
-                        gender = x.gender,
-                        email = x.email,
-                        Address = x.Address,
-                        created_at = x.created_at,
-                        typeOfCustomer = x.typeOfCustomer.Type
-                    }).ToList();
 
                 return Ok(new APIGenericResponseDTO<customersDTO>
                 {
                     Success = true,
                     Message = "List Of Customers",
-                    Results = listOfCustomer_ReadDTO
-                    
+                    Results = listOfCustomers
+
                 });
             }
             catch(Exception ex)

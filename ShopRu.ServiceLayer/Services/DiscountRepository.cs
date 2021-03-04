@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using ShopRUs_API.Helpers.ReadDTO;
 using ShopRUs_API.ShopRu.DataAccess.DBContext;
 using ShopRUs_API.ShopRu.DataAccess.Entities;
 using ShopRUs_API.ShopRu.DataAccess.helper;
@@ -23,11 +24,20 @@ namespace ShopRUs_API.ShopRu.ServiceLayer.Services
             _context.Discounts.Add(discount);
         }
 
-        public IEnumerable<Discount> GetListOfAllDiscounts()
+        public List<discountDTO> GetListOfAllDiscounts()
         {
             var discounts = _context.Discounts.Include(x => x.percentage);
 
-            return discounts;
+            var listOfDiscounts_ReadDTO = discounts
+                   .Select(x => new discountDTO
+                   {
+                       DiscountType = x.DiscountType,
+                       Percentage = x.percentage.percentage.ToString() + "%",
+                       Price = x.Price
+                   }).ToList();
+
+
+            return listOfDiscounts_ReadDTO;
         }
 
         public Percentage GetPercentage(int percentg)
