@@ -11,7 +11,8 @@ namespace ShopRUs_API.ShopRu.DataAccess.Interface
    public interface ICustomer
    {
        ///parameter below is to aid Paging and sorting incase of Customer large dataSet
-      List<customersDTO> GetListOfAllCustomers(getListOfCustomersResourceParameters parameter);  
+      List<customersDTO> GetListOfAllCustomers(getListOfCustomersResourceParameters parameter);
+      List<customersDTO> GetListOf_AllCustomers(); 
       void AddCustomer(Customer customer);
       Customer GetSingleCustomerById(int id);
       Customer GetSingleCustomerByName(string name);

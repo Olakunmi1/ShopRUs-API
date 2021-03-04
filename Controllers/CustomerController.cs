@@ -21,19 +21,19 @@ namespace ShopRUs_API.Controllers
         private readonly ILogger<CustomerController> _logger;
         private readonly ICustomer _customer;
 
-        public CustomerController(ILogger<CustomerController> logger, ICustomer customer)
+        public CustomerController(ICustomer customer, ILogger<CustomerController> logger)
         {
             _logger = logger;
             _customer = customer;
         }
 
-        [HttpGet("getListOfAllCustomers")]
-        public IActionResult GetListOfCustomers([FromQuery] getListOfCustomersResourceParameters param)   
+        [HttpGet("GetListOfAllCustomers")] 
+        public IActionResult GetListOf_Customers()
         {
-            try 
+            try
             {
                 _logger.LogInformation("getListOfAllCusomers");
-                var listOfCustomers = _customer.GetListOfAllCustomers(param);
+                var listOfCustomers = _customer.GetListOf_AllCustomers();
 
                 return Ok(new APIGenericResponseDTO<customersDTO>
                 {
@@ -43,7 +43,7 @@ namespace ShopRUs_API.Controllers
 
                 });
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
                 return Ok(new APIGenericResponseDTO<string>
@@ -209,6 +209,33 @@ namespace ShopRUs_API.Controllers
                 });
             }
         }
+
+        //[HttpGet("getListOfAllCustomers")]
+        //public IActionResult GetListOfCustomers([FromQuery] getListOfCustomersResourceParameters param)
+        //{
+        //    try
+        //    {
+        //        _logger.LogInformation("getListOfAllCusomers");
+        //        var listOfCustomers = _customer.GetListOfAllCustomers(param);
+
+        //        return Ok(new APIGenericResponseDTO<customersDTO>
+        //        {
+        //            Success = true,
+        //            Message = "List Of Customers",
+        //            Results = listOfCustomers
+
+        //        });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        _logger.LogError(ex.Message);
+        //        return Ok(new APIGenericResponseDTO<string>
+        //        {
+        //            Success = false,
+        //            Message = "Something went wrong Please try again"
+        //        });
+        //    }
+        //}
     }
     
 }

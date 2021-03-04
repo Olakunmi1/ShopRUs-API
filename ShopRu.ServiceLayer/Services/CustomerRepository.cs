@@ -24,6 +24,7 @@ namespace ShopRUs_API.ShopRu.ServiceLayer.Services
             _context.Customers.Add(customer);
         }
 
+        //for paging and sorting 
         public List<customersDTO> GetListOfAllCustomers(getListOfCustomersResourceParameters parameters)
         {
             var collections = _context.Customers as IQueryable<Customer>;
@@ -32,6 +33,23 @@ namespace ShopRUs_API.ShopRu.ServiceLayer.Services
                                      .Take(parameters.pageSize);
             
             collections.ToList();
+
+            var listOfCustomer_ReadDTO = collections
+                   .Select(x => new customersDTO
+                   {
+                       Name = x.firstName + " " + x.lastName,
+                       gender = x.gender,
+                       email = x.email,
+                       Address = x.Address,
+                       created_at = x.created_at,
+                       typeOfCustomer = x.typeOfCustomer.Type
+                   }).ToList();
+            return listOfCustomer_ReadDTO;
+        }
+
+        public List<customersDTO> GetListOf_AllCustomers()
+        {
+            var collections = _context.Customers.Include(t => t.typeOfCustomer);
 
             var listOfCustomer_ReadDTO = collections
                    .Select(x => new customersDTO

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopRUs API", "ShopRUs API.csproj", "{A660B905-4821-4FC9-BBB2-9E64335A3A5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopRUs API", "ShopRUs API.csproj", "{A660B905-4821-4FC9-BBB2-9E64335A3A5F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "XUnit", "XUnit", "{4F2DC91F-A5A9-4925-9367-B23DA8BB9614}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject", "..\XUnitTestProject\XUnitTestProject.csproj", "{C3306A95-8D61-4FA4-837D-6D24A3EF521B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{A660B905-4821-4FC9-BBB2-9E64335A3A5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A660B905-4821-4FC9-BBB2-9E64335A3A5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A660B905-4821-4FC9-BBB2-9E64335A3A5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3306A95-8D61-4FA4-837D-6D24A3EF521B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3306A95-8D61-4FA4-837D-6D24A3EF521B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3306A95-8D61-4FA4-837D-6D24A3EF521B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3306A95-8D61-4FA4-837D-6D24A3EF521B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C3306A95-8D61-4FA4-837D-6D24A3EF521B} = {4F2DC91F-A5A9-4925-9367-B23DA8BB9614}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA6422BB-6C85-4E86-92AC-CB374B62EF32}

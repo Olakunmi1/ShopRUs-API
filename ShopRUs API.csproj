@@ -34,6 +34,7 @@
     <Compile Remove="Migrations\20210302130057_Seeder.Designer.cs" />
     <Compile Remove="ShopRu.DataAccess\DBContext\._ApplicationDbContext.cs" />
     <Compile Remove="XUnitTest\Controller\._DiscountController.cs" />
+    <Compile Remove="XUnitTest\Controller\CustomerController.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,11 +53,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="XUnitTest\Controller\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="FluentAssertions" Version="5.10.3" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.12" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="3.1.12" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -68,11 +67,18 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="NLog.Config" Version="4.7.7" />
     <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.Filters" Version="6.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.0.1" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.core" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 
